@@ -4,3 +4,16 @@ const API = axios.create({
   baseURL: "http://localhost:5000/api", // backend URL
 });
 
+export const getAIHint = async (question, token) =>{
+  const res = await API.post(
+    "/quizzez/ai-hint",
+    { question },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return res.data.hint;
+};
