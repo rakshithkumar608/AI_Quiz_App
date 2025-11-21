@@ -7,6 +7,7 @@ import RegisterForm from "./components/Auth/RegisterForm";
 import Dashboard from "./pages/Dashboard";
 import GamePage from "./pages/GamePage";
 
+
 const App = () => {
   return (
     <AuthProvider>
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/quiz/:id" element={<GamePage />} />
+            
           </Routes>
         </Router>
       </QuizProvider>
