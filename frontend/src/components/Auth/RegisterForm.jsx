@@ -38,7 +38,7 @@ const RegisterForm = () => {
       });
 
       navigate("/dashboard");
-    } catch (error) {
+    } catch (err) {
       setToast({
         show: true,
         message: err.response?.data?.message || "Registration failed",
