@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion, scale } from "framer-motion";
+import { motion } from "framer-motion";
 import { Menu, User, LogIn, Home, BookOpen, Trophy, Star,  } from "lucide-react";
 
 const TopBar = () => {
