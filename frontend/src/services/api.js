@@ -17,3 +17,5 @@ export const getAIHint = async (question, token) =>{
 
   return res.data.hint;
 };
+
+export default API;
