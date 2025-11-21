@@ -7,6 +7,9 @@ import RegisterForm from "./components/Auth/RegisterForm";
 import Dashboard from "./pages/Dashboard";
 import GamePage from "./pages/GamePage";
 import Scoreboard from "./components/QuizGame/Scoreboard";
+import ProfilePage from "./pages/ProfilePage";
+import TopBar from "./components/Layouts/TopBar";
+import Navbar from "./components/Layouts/Navbar";
 
 
 const App = () => {
@@ -15,12 +18,15 @@ const App = () => {
       <QuizProvider>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<TopBar />}/>
+            <Route path="/navbar" element={<Navbar />}/>
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/quiz/:id" element={<GamePage />} />
             <Route path="/scoreboard" element={<Scoreboard />}/>
+            <Route path="/profile" element={<ProfilePage />}/>
           </Routes>
         </Router>
       </QuizProvider>
