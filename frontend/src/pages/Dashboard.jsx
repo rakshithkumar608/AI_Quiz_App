@@ -73,41 +73,29 @@ const Dashboard = () => {
                 {/* AI Hint Icon */}
                 {user && (
                   <div className="ml-2">
-                    <AIHintIcon
-                      question={`Give a general hint for the quiz: ${quiz.title}`}
-                      token={user.token}
-                    />
+                    <AIHintIcon question={`Give a general hint for the quiz: ${quiz.title}`}
+                    token={user.token}/>
                   </div>
                 )}
               </div>
 
-              <p className="text-gray-500">
-                {quiz.description || "Test your knowledge!"}
-              </p>
+              <p className="text-gray-500">{quiz.description || "Test your knowledge!"}</p>
 
               {/* Expandable Quiz Preview on Hover  */}
-              <motion.div
-                className="mt-4 space-y-1"
-                initial={{ opacity: 0, height: 0 }}
-                whileHover={{ opacity: 1, height: "auto" }}
-                transition={{ duration: 0.3 }}
+              <motion.div 
+               className="mt-4 space-y-1"
+               initial={{ opacity: 0, height: 0 }}
+               whileHover={{ opacity: 1, height: "auto" }}
+               transition={{ duration: 0.3 }}
               >
-                <h4 className="text-sm font-semibold text-gray-600">
-                  Preview Questions:
-                </h4>
-                {quiz.questions?.length > 3 && (
-                  <p className="text-gray-400 text-xs">and more...</p>
-                )}
+             <h4 className="text-sm font-semibold text-gray-600">Preview Questions:</h4>
+             {quiz.questions?.length > 3 && <p className="text-gray-400 text-xs">and more...</p>}
               </motion.div>
 
               {/* Stats& Start Button */}
               <div className="mt-4 flex justify-between items-center">
-                <span className="text-sm text-gray-400">
-                  Avg Score: {quiz.avgScore || 0}%
-                </span>
-                <Button variant="accent" onClick={() => startQuiz(quiz)}>
-                  Start
-                </Button>
+                <span className="text-sm text-gray-400">Avg Score: {quiz.avgScore || 0}%</span>
+                <Button variant="accent" onClick={() => startQuiz(quiz)}>Start</Button>
               </div>
             </motion.div>
           ))}

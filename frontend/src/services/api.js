@@ -6,7 +6,7 @@ const API = axios.create({
 
 export const getAIHint = async (question, token) =>{
   const res = await API.post(
-    "/quizzez/ai-hint",
+    "quizzes/ai-hint",
     { question },
     {
       headers: {
